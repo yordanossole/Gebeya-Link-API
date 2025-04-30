@@ -9,7 +9,7 @@ services:
       - key: PORT
         value: 8080
       - key: DATABASE_URL
-        value: postgresql://admin:3Aeujqg8GffDoDDMzsdLMw3u70VZRXAP@dpg-d091j3pr0fns73du1j40-a/dream_shops_db_scaj
+        value: jdbc:postgresql://admin:3Aeujqg8GffDoDDMzsdLMw3u70VZRXAP@dpg-d091j3pr0fns73du1j40-a.postgres.database.azure.com:5432/dream_shops_db_scaj?sslmode=require
       - key: DB_USERNAME
         value: admin
       - key: DB_PASSWORD
