@@ -51,7 +51,6 @@ com/yordanos/dreamShops/service/cart/CartService.class
 com/yordanos/dreamShops/repository/RoleRepository.class
 com/yordanos/dreamShops/repository/CartItemRepository.class
 com/yordanos/dreamShops/model/OrderItem.class
-com/yordanos/dreamShops/data/DataInitializer.class
 com/yordanos/dreamShops/request/CreateUserRequest.class
 com/yordanos/dreamShops/controller/UserController.class
 com/yordanos/dreamShops/controller/AuthController.class
