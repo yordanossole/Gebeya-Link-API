@@ -10,9 +10,9 @@ services:
         value: 8080
       - key: SPRING_DATASOURCE_URL
         value: jdbc:postgresql://admin:3Aeujqg8GffDoDDMzsdLMw3u70VZRXAP@dpg-d091j3pr0fns73du1j40-a.postgres.database.azure.com:5432/dream_shops_db_scaj?sslmode=require
-      - key: DB_USERNAME
+      - key: SPRING_DATASOURCE_USERNAME
         value: admin
-      - key: DB_PASSWORD
+      - key: SPRING_DATASOURCE_USERNAME
         value: 3Aeujqg8GffDoDDMzsdLMw3u70VZRXAP
       - key: JWT_SECRET
         value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ
