@@ -12,9 +12,9 @@ services:
         value: jdbc:h2:mem:dreamshops;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
 #        value: jdbc:postgresql://dpg-d091j3pr0fns73du1j40-a.postgres.database.azure.com:5432/dream_shops_db_scaj?sslmode=require
       - key: SPRING_DATASOURCE_USERNAME
-        value: admin
+        value: sa
       - key: SPRING_DATASOURCE_PASSWORD
-        value: 3Aeujqg8GffDoDDMzsdLMw3u70VZRXAP
+        value: ""
       - key: JWT_SECRET
         value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ
 
