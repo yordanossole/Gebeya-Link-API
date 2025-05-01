@@ -15,6 +15,7 @@ import java.math.BigDecimal;
 
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
+@CrossOrigin
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("${api.prefix}/carts")

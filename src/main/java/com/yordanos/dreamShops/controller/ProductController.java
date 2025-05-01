@@ -17,6 +17,7 @@ import java.util.List;
 import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
+@CrossOrigin
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("${api.prefix}/products")
