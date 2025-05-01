@@ -9,7 +9,8 @@ services:
       - key: PORT
         value: 8080
       - key: SPRING_DATASOURCE_URL
-        value: jdbc:h2:mem:dreamshops;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        value: jdbc:h2:file:./data/demo-db
+#        value: jdbc:h2:mem:dreamshops;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
 #        value: jdbc:postgresql://dpg-d091j3pr0fns73du1j40-a.postgres.database.azure.com:5432/dream_shops_db_scaj?sslmode=require
       - key: SPRING_DATASOURCE_USERNAME
         value: sa
