@@ -1,5 +1,6 @@
 package com.yordanos.dreamShops.service.category;
 
+import com.yordanos.dreamShops.dto.CategoryDto;
 import com.yordanos.dreamShops.exceptions.AlreadyExistsException;
 import com.yordanos.dreamShops.exceptions.ResourceNotFoundException;
 import com.yordanos.dreamShops.model.Category;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -28,8 +30,13 @@ public class CategoryService implements ICategoryService{
     }
 
     @Override
-    public List<Category> getAllCategories() {
-        return categoryRepository.findAll();
+    public List<CategoryDto> getAllCategories() {
+        return categoryRepository.findAll().stream()
+                .map(category -> new CategoryDto(
+                                        category.getId(),
+                                        category.getName(),
+                                        category.getProducts() != null ? category.getProducts().size() : 0))
+                .collect(Collectors.toList());
     }
 
     @Override

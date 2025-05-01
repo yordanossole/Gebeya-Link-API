@@ -1,5 +1,6 @@
 package com.yordanos.dreamShops.controller;
 
+import com.yordanos.dreamShops.dto.CategoryDto;
 import com.yordanos.dreamShops.exceptions.AlreadyExistsException;
 import com.yordanos.dreamShops.exceptions.ResourceNotFoundException;
 import com.yordanos.dreamShops.model.Category;
@@ -23,7 +24,7 @@ public class CategoryController {
     @GetMapping("/all")
     public ResponseEntity<ApiResponse> getAllCategories() {
         try {
-            List<Category> categories = categoryService.getAllCategories();
+            List<CategoryDto> categories = categoryService.getAllCategories();
             return ResponseEntity.ok(new ApiResponse("Found! ", categories));
         } catch (Exception e) {
             return ResponseEntity.status(INTERNAL_SERVER_ERROR).body(new ApiResponse("Error: ", INTERNAL_SERVER_ERROR));
