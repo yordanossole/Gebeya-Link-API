@@ -9,7 +9,7 @@ services:
       - key: PORT
         value: 8080
       - key: SPRING_DATASOURCE_URL
-        value: jdbc:postgresql://admin:3Aeujqg8GffDoDDMzsdLMw3u70VZRXAP@dpg-d091j3pr0fns73du1j40-a.postgres.database.azure.com:5432/dream_shops_db_scaj?sslmode=require
+        value: jdbc:postgresql://dpg-d091j3pr0fns73du1j40-a.postgres.database.azure.com:5432/dream_shops_db_scaj?sslmode=require
       - key: SPRING_DATASOURCE_USERNAME
         value: admin
       - key: SPRING_DATASOURCE_PASSWORD
