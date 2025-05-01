@@ -17,6 +17,7 @@ com/yordanos/dreamShops/exceptions/ResourceNotFoundException.class
 com/yordanos/dreamShops/repository/ImageRepository.class
 com/yordanos/dreamShops/service/category/ICategoryService.class
 com/yordanos/dreamShops/security/jwt/JwtAuthEntryPoint.class
+com/yordanos/dreamShops/dto/CategoryDto.class
 com/yordanos/dreamShops/controller/CategoryController.class
 com/yordanos/dreamShops/dto/ImageDto.class
 com/yordanos/dreamShops/response/ApiResponse.class

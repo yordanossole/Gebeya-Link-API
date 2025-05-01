@@ -10,6 +10,7 @@
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/data/DataInitializer.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/dto/CartDto.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/dto/CartItemDto.java
+/home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/dto/CategoryDto.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/dto/ImageDto.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/dto/OrderDto.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/dto/OrderItemDto.java
