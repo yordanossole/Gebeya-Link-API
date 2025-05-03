@@ -8,6 +8,7 @@
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/controller/ProductController.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/controller/UserController.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/data/DataInitializer.java
+/home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/dto/AddressDto.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/dto/CartDto.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/dto/CartItemDto.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/dto/CategoryDto.java
@@ -20,6 +21,7 @@
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/exceptions/AlreadyExistsException.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/exceptions/GlobalExceptionHandler.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/exceptions/ResourceNotFoundException.java
+/home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/model/Address.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/model/Cart.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/model/CartItem.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/model/Category.java
@@ -29,6 +31,7 @@
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/model/Product.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/model/Role.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/model/User.java
+/home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/repository/AddressRepository.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/repository/CartItemRepository.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/repository/CartRepository.java
 /home/yordanos/Downloads/spring/Gebeya-Link-API/src/main/java/com/yordanos/dreamShops/repository/CategoryRepository.java

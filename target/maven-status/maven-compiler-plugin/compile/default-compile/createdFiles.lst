@@ -21,6 +21,7 @@ com/yordanos/dreamShops/dto/CategoryDto.class
 com/yordanos/dreamShops/controller/CategoryController.class
 com/yordanos/dreamShops/dto/ImageDto.class
 com/yordanos/dreamShops/response/ApiResponse.class
+com/yordanos/dreamShops/dto/AddressDto.class
 com/yordanos/dreamShops/service/user/IUserService.class
 com/yordanos/dreamShops/service/order/IOrderService.class
 com/yordanos/dreamShops/controller/CartController.class
@@ -28,8 +29,10 @@ com/yordanos/dreamShops/service/cart/ICartService.class
 com/yordanos/dreamShops/model/CartItem.class
 com/yordanos/dreamShops/exceptions/GlobalExceptionHandler.class
 com/yordanos/dreamShops/dto/CartDto.class
+com/yordanos/dreamShops/model/Address.class
 com/yordanos/dreamShops/model/Image.class
 com/yordanos/dreamShops/request/ProductUpdateRequest.class
+com/yordanos/dreamShops/repository/AddressRepository.class
 com/yordanos/dreamShops/repository/CategoryRepository.class
 com/yordanos/dreamShops/repository/UserRepository.class
 com/yordanos/dreamShops/model/Product.class
