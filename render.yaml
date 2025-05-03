@@ -9,15 +9,19 @@ services:
       - key: PORT
         value: 8080
       - key: SPRING_DATASOURCE_URL
-        value: jdbc:postgresql://dpg-d091j3pr0fns73du1j40-a.oregon-postgres.render.com/dream_shops_db_scaj
-#        jdbc:postgresql://dpg-d091j3pr0fns73du1j40-a.oregon-postgres.render.com/dream_shops_db_scaj?user=admin&password=3Aeujqg8GffDoDDMzsdLMw3u70VZRXAP      
+#        supabase
+        value: jdbc:postgresql://aws-0-us-east-2.pooler.supabase.com:6543/postgres
+#      render-external
+#        value: jdbc:postgresql://dpg-d091j3pr0fns73du1j40-a.oregon-postgres.render.com/dream_shops_db_scaj
+#      h2
 #        value: jdbc:h2:file:./data/demo-db
 #        value: jdbc:h2:mem:dreamshops;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#      render-internal
 #        value: jdbc:postgresql://dpg-d091j3pr0fns73du1j40-a.postgres.database.azure.com:5432/dream_shops_db_scaj?sslmode=require
       - key: SPRING_DATASOURCE_USERNAME
-        value: sa
+        value: postgres.wdhjczrpcfmrdizafcdv
       - key: SPRING_DATASOURCE_PASSWORD
-        value: ""
+        value: 00
       - key: JWT_SECRET
         value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ
 

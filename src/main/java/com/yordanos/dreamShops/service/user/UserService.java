@@ -1,9 +1,12 @@
 package com.yordanos.dreamShops.service.user;
 
+import com.yordanos.dreamShops.dto.AddressDto;
 import com.yordanos.dreamShops.dto.UserDto;
 import com.yordanos.dreamShops.exceptions.AlreadyExistsException;
 import com.yordanos.dreamShops.exceptions.ResourceNotFoundException;
+import com.yordanos.dreamShops.model.Address;
 import com.yordanos.dreamShops.model.User;
+import com.yordanos.dreamShops.repository.AddressRepository;
 import com.yordanos.dreamShops.repository.CartRepository;
 import com.yordanos.dreamShops.repository.UserRepository;
 import com.yordanos.dreamShops.request.CreateUserRequest;
@@ -25,6 +28,7 @@ public class UserService implements IUserService {
     private final ModelMapper modelMapper;
     private final PasswordEncoder passwordEncoder;
     private final ICartService cartService;
+    private final AddressRepository addressRepository;
 
     @Override
     public User getUserById(Long userId) {
@@ -38,10 +42,19 @@ public class UserService implements IUserService {
                 .filter(user -> !userRepository.existsByEmail(request.getEmail()))
                 .map(req -> {
                     User user = new User();
+                    Address address = new Address();
                     user.setEmail(request.getEmail());
                     user.setPassword(passwordEncoder.encode(request.getPassword()));
                     user.setFirstName(request.getFirstName());
                     user.setLastName(request.getLastName());
+                    address.setCity(request.getCity());
+                    address.setCountry(request.getCountry());
+                    address.setStreet(request.getStreet());
+                    address.setPostalCode(request.getPostalCode());
+                    address.setState(request.getState());
+//                    address.setUser(user);
+                    user.setAddress(address);
+                    addressRepository.save(address);
                     return userRepository.save(user);
                 }).orElseThrow(() -> new AlreadyExistsException("Oops! " + request.getEmail() + " already exists!"));
     }

@@ -1,33 +1,26 @@
 package com.yordanos.dreamShops.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.sql.Blob;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Image {
+public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String fileName;
-    private String fileType;
 
-    @Lob
-    private Blob image;
-    private String downloadUrl;
+    private String street;
+    private String city;
+    private String state;
+    private String postalCode;
+    private String country;
 
-    @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Product product;
-
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private User user;
 }

@@ -23,6 +23,12 @@ public class User {
     private String firstName;
     private String lastName;
 
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Address address;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Image images;
+
     @NaturalId
     private String email;
     private String password;
@@ -40,4 +46,9 @@ public class User {
     )
 
     private Collection<Role> roles = new HashSet<>();
+
+    public void setAddress(Address address) {
+        this.address = address;
+        address.setUser(this);
+    }
 }
