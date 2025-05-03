@@ -1,13 +1,14 @@
 package com.yordanos.dreamShops.service.user;
 
-import com.yordanos.dreamShops.dto.AddressDto;
+import com.yordanos.dreamShops.dto.ImageDto;
 import com.yordanos.dreamShops.dto.UserDto;
 import com.yordanos.dreamShops.exceptions.AlreadyExistsException;
 import com.yordanos.dreamShops.exceptions.ResourceNotFoundException;
 import com.yordanos.dreamShops.model.Address;
+import com.yordanos.dreamShops.model.Image;
 import com.yordanos.dreamShops.model.User;
 import com.yordanos.dreamShops.repository.AddressRepository;
-import com.yordanos.dreamShops.repository.CartRepository;
+import com.yordanos.dreamShops.repository.ImageRepository;
 import com.yordanos.dreamShops.repository.UserRepository;
 import com.yordanos.dreamShops.request.CreateUserRequest;
 import com.yordanos.dreamShops.request.UpdateUserRequest;
@@ -29,6 +30,7 @@ public class UserService implements IUserService {
     private final PasswordEncoder passwordEncoder;
     private final ICartService cartService;
     private final AddressRepository addressRepository;
+    private final ImageRepository imageRepository;
 
     @Override
     public User getUserById(Long userId) {
@@ -77,7 +79,11 @@ public class UserService implements IUserService {
 
     @Override
     public UserDto convertUserToDto(User user) {
-        return modelMapper.map(user, UserDto.class);
+        UserDto userDto = modelMapper.map(user, UserDto.class);
+        Image image = imageRepository.findByUserId(user.getId());
+        ImageDto imageDto = modelMapper.map(image, ImageDto.class);
+        userDto.setImage(imageDto);
+        return userDto;
     }
 
     @Override
@@ -104,6 +110,17 @@ public class UserService implements IUserService {
         }
         else {
             throw new ResourceNotFoundException("User cart not found!");
+        }
+    }
+
+    @Override
+    public Long getImageId(String username) {
+        User user = userRepository.findByEmail(username);
+        if (user.getImage() != null) {
+            return user.getImage().getId();
+        }
+        else {
+            throw new ResourceNotFoundException("User image not found!");
         }
     }
 

@@ -4,8 +4,11 @@ import com.yordanos.dreamShops.dto.ImageDto;
 import com.yordanos.dreamShops.exceptions.ResourceNotFoundException;
 import com.yordanos.dreamShops.model.Image;
 import com.yordanos.dreamShops.model.Product;
+import com.yordanos.dreamShops.model.User;
 import com.yordanos.dreamShops.repository.ImageRepository;
 import com.yordanos.dreamShops.service.product.IProductService;
+import com.yordanos.dreamShops.service.user.UserService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -13,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.sql.rowset.serial.SerialBlob;
 import java.io.IOException;
+import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +27,10 @@ public class ImageService implements IImageService {
     private final ImageRepository imageRepository;
     private final IProductService productService;
     private final ModelMapper modelMapper;
+    private final UserService userService;
 
     @Override
+    @Transactional
     public Image getImageById(Long id) {
         return imageRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("No image found with id: " + id));
     }
@@ -67,6 +73,32 @@ public class ImageService implements IImageService {
     }
 
     @Override
+    public ImageDto saveProfilePhoto(MultipartFile file, Long userId) {
+        User user = userService.getUserById(userId);
+        try {
+            Image image = new Image();
+            image.setFileName(file.getOriginalFilename());
+            image.setFileType(file.getContentType());
+            image.setImage(new SerialBlob(file.getBytes()));
+            image.setUser(user);
+
+            String buildDownloadUrl = "/api/v1/users/user/image/download/";
+
+            String downloadUrl = buildDownloadUrl + image.getId();
+            image.setDownloadUrl(downloadUrl);
+
+            Image savedImage = imageRepository.save(image);
+            savedImage.setDownloadUrl(buildDownloadUrl + savedImage.getId());
+            imageRepository.save(savedImage);
+
+            return convertToDto(savedImage);
+        } catch (IOException | SQLException e) {
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
+
+    @Override
     public Image updateImage(MultipartFile file, Long imageId) {
         Image image = getImageById(imageId);
         try {
@@ -82,5 +114,12 @@ public class ImageService implements IImageService {
     @Override
     public ImageDto convertToDto(Image image) {
         return modelMapper.map(image, ImageDto.class);
+    }
+
+    @Transactional
+    @Override
+    public byte[] getImageBytes(Image image) throws SQLException {
+        Blob blob = image.getImage();
+        return blob.getBytes(1, (int) blob.length());
     }
 }

@@ -22,5 +22,7 @@ public interface IUserService {
 
     Long getCartId(String username);
 
+    Long getImageId(String username);
+
     Long getUserByUsername(String username);
 }
