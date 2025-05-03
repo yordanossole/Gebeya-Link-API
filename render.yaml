@@ -21,7 +21,7 @@ services:
       - key: SPRING_DATASOURCE_USERNAME
         value: postgres.wdhjczrpcfmrdizafcdv
       - key: SPRING_DATASOURCE_PASSWORD
-        value: 00
+        value: 0000
       - key: JWT_SECRET
         value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ
 
